@@ -1,0 +1,15 @@
+PACOTE COMPLETO — LIÇÕES ADULTOS EBD FIEL — 3º TRIMESTRE DE 2026
+
+Conteúdo:
+- 13 arquivos HTML individuais, um para cada lição.
+- index.html para abrir a lista completa das lições.
+
+Validações:
+- Campos originais obrigatórios preservados.
+- 3 tópicos e 9 subtópicos em cada lição.
+- 3 blocos EU ENSINEI QUE em cada lição.
+- 14 blocos de apoio e 14 aplicações práticas por lição.
+- Classes e CSS do modelo aprovado.
+- Ausência de listas com marcadores e expressões proibidas.
+
+Abra o index.html para acessar todas as lições.
