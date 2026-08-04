@@ -205,3 +205,144 @@ p{margin:.72rem 0;color:var(--ink)}
 @media print{
   .apoio-footer{display:none!important}
 }
+
+/* Ajuste final: títulos mais equilibrados e rodapé social visível no PDF */
+.licao-container>h1{
+  max-width:100%;
+  font-size:clamp(1.55rem,3vw,2.25rem);
+  line-height:1.16;
+  text-wrap:balance;
+}
+
+@media(max-width:760px){
+  .licao-container>h1{
+    font-size:clamp(1.42rem,6.2vw,1.72rem);
+    line-height:1.18;
+    margin-bottom:22px;
+    padding-bottom:15px;
+  }
+}
+
+@media print{
+  @page{size:A4 portrait;margin:8mm 8mm 9mm}
+
+  /* Mantém o cabeçalho amarelo inteiro, sem recorte da logo. */
+  .topo-ebd{
+    display:block!important;
+    width:160mm!important;
+    max-width:100%!important;
+    height:auto!important;
+    max-height:none!important;
+    margin:0 auto 2mm!important;
+    border-radius:0!important;
+    box-shadow:none!important;
+    object-fit:contain!important;
+    object-position:center!important;
+    break-inside:avoid-page!important;
+    page-break-inside:avoid!important;
+  }
+
+  .licao-container>h1{
+    font-size:13.2pt!important;
+    line-height:1.12!important;
+    text-wrap:balance;
+  }
+
+  /* No PDF, somente o botão é ocultado; redes, logo e identificação permanecem. */
+  .apoio-footer{
+    display:block!important;
+    width:auto!important;
+    margin:4mm 0 0!important;
+    padding:3.5mm 0 0!important;
+    border-top:1px solid #d9b75f!important;
+    background:#fff!important;
+    color:#425864!important;
+    font-size:7.4pt!important;
+    break-inside:avoid-page!important;
+    page-break-inside:avoid!important;
+  }
+  .apoio-footer-inner{width:100%!important;margin:0!important}
+  .apoio-footer-actions{display:none!important}
+  .apoio-social-links{
+    display:flex!important;
+    flex-wrap:wrap!important;
+    justify-content:center!important;
+    gap:1.5mm 2mm!important;
+    margin:0 0 2.5mm!important;
+  }
+  .apoio-social-link{
+    display:inline-flex!important;
+    min-height:0!important;
+    gap:1.2mm!important;
+    padding:1.2mm 2.1mm!important;
+    border:.4px solid #cfded5!important;
+    border-radius:999px!important;
+    background:#f7fbf8!important;
+    color:#064d36!important;
+    font-size:7.2pt!important;
+    line-height:1!important;
+    text-decoration:none!important;
+    box-shadow:none!important;
+  }
+  .apoio-social-icon{
+    width:5.2mm!important;
+    height:5.2mm!important;
+    flex:0 0 5.2mm!important;
+  }
+  .apoio-social-tiktok{font-size:13pt!important}
+  .apoio-social-facebook{font-size:13pt!important;padding-top:1mm!important}
+  .apoio-footer-logo{display:inline-block!important;margin:0 auto 1.3mm!important}
+  .apoio-footer-logo img{
+    display:block!important;
+    width:23mm!important;
+    max-width:none!important;
+    height:auto!important;
+    margin:0 auto!important;
+  }
+  .apoio-footer-caption{
+    display:block!important;
+    margin:0!important;
+    color:#376360!important;
+    font-size:7.2pt!important;
+    line-height:1.2!important;
+    text-align:center!important;
+  }
+}
+
+/* Rodapé compacto em uma faixa para não desperdiçar uma folha A4. */
+@media print{
+  .apoio-footer{
+    margin-top:2mm!important;
+    padding-top:2mm!important;
+  }
+  .apoio-footer-inner{
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    flex-wrap:wrap!important;
+    gap:1.5mm 3mm!important;
+  }
+  .apoio-social-links{
+    flex:0 1 auto!important;
+    flex-wrap:nowrap!important;
+    gap:1mm!important;
+    margin:0!important;
+  }
+  .apoio-social-link{
+    gap:.8mm!important;
+    padding:.9mm 1.5mm!important;
+    font-size:6.4pt!important;
+  }
+  .apoio-social-icon{
+    width:4.3mm!important;
+    height:4.3mm!important;
+    flex-basis:4.3mm!important;
+  }
+  .apoio-footer-logo{flex:0 0 auto!important;margin:0!important}
+  .apoio-footer-logo img{width:13mm!important}
+  .apoio-footer-caption{
+    flex:0 0 auto!important;
+    font-size:6.5pt!important;
+    white-space:nowrap!important;
+  }
+}
