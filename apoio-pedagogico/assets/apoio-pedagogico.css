@@ -346,3 +346,40 @@ p{margin:.72rem 0;color:var(--ink)}
     white-space:nowrap!important;
   }
 }
+
+/* Ajuste final A4: cabeçalho amarelo em toda a largura útil e imagem temática completa */
+@media print{
+  @page{size:A4 portrait;margin:7mm 8mm 9mm}
+
+  /* Ocupa toda a largura disponível entre as margens da folha A4. */
+  .topo-ebd{
+    display:block!important;
+    width:100%!important;
+    max-width:none!important;
+    height:auto!important;
+    max-height:none!important;
+    margin:0 0 2mm!important;
+    border-radius:0!important;
+    box-shadow:none!important;
+    object-fit:contain!important;
+    object-position:center!important;
+    break-inside:avoid-page!important;
+    page-break-inside:avoid!important;
+  }
+
+  /* Mostra a arte completa, sem o recorte causado por altura fixa e object-fit: cover. */
+  .imagem-licao{
+    display:block!important;
+    width:100%!important;
+    max-width:none!important;
+    height:auto!important;
+    max-height:none!important;
+    margin:0 0 2.5mm!important;
+    border-radius:0!important;
+    box-shadow:none!important;
+    object-fit:contain!important;
+    object-position:center!important;
+    break-inside:avoid-page!important;
+    page-break-inside:avoid!important;
+  }
+}
