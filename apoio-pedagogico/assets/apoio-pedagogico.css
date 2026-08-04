@@ -125,3 +125,83 @@ p{margin:.72rem 0;color:var(--ink)}
   .apoio-card small{font-size:6.3pt!important}
   .apoio-card strong{margin-top:.8mm!important;font-size:9.2pt!important;line-height:1.25!important}
 }
+
+/* Rodapé público das lições: ações, redes sociais e identidade EBD Fiel */
+.apoio-footer{
+  width:100%;
+  margin:44px 0 0;
+  padding:34px 20px 28px;
+  border-top:3px solid #e7ad18;
+  background:#fff;
+  color:var(--muted);
+  text-align:center;
+  font-size:.84rem;
+}
+.apoio-footer-inner{width:min(1040px,100%);margin:0 auto}
+.apoio-footer-actions{display:flex;justify-content:center;margin:0 0 28px}
+.apoio-print-button{
+  appearance:none;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  min-height:46px;
+  padding:11px 19px;
+  border:1px solid var(--navy);
+  border-radius:999px;
+  background:var(--navy);
+  color:#fff;
+  font:inherit;
+  font-size:.9rem;
+  font-weight:850;
+  cursor:pointer;
+  box-shadow:0 9px 22px rgba(16,42,67,.17);
+  transition:transform .18s ease,box-shadow .18s ease,background .18s ease;
+}
+.apoio-print-button:hover{transform:translateY(-2px);background:var(--navy-2);box-shadow:0 13px 28px rgba(16,42,67,.22)}
+.apoio-print-button:focus-visible,.apoio-social-link:focus-visible,.apoio-footer-logo:focus-visible{outline:3px solid rgba(200,154,67,.45);outline-offset:3px}
+.apoio-print-button svg{width:19px;height:19px;flex:0 0 auto}
+.apoio-social-links{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 12px;margin:0 auto 30px}
+.apoio-social-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  min-height:48px;
+  padding:8px 16px;
+  border:1px solid #dbe7df;
+  border-radius:999px;
+  background:#f7fbf8;
+  color:#064d36;
+  text-decoration:none;
+  font-size:.94rem;
+  font-weight:850;
+  line-height:1;
+  transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease;
+}
+.apoio-social-link:hover{transform:translateY(-2px);border-color:#b9d4c3;box-shadow:0 8px 18px rgba(16,42,67,.09)}
+.apoio-social-icon{display:inline-grid;place-items:center;width:29px;height:29px;flex:0 0 29px;overflow:hidden}
+.apoio-social-icon svg{display:block;width:100%;height:100%}
+.apoio-social-tiktok{border-radius:50%;background:#050505;color:#fff;font-family:Arial,sans-serif;font-size:25px;font-weight:900;line-height:1;transform:rotate(-7deg)}
+.apoio-social-tiktok span{transform:translateY(-1px)}
+.apoio-social-facebook{border-radius:50%;background:#1877f2;color:#fff;font-family:Arial,sans-serif;font-size:25px;font-weight:900;line-height:1;padding-top:5px}
+.apoio-footer-logo{display:inline-block;margin:0 auto 12px;border-radius:12px}
+.apoio-footer-logo img{display:block;width:142px;max-width:46vw;height:auto;margin:auto}
+.apoio-footer-caption{margin:0!important;color:#376360!important;font-size:.86rem;letter-spacing:.01em;text-align:center!important}
+
+/* As páginas públicas não exibem barra superior, índice ou atalhos flutuantes. */
+.apoio-toolbar,.apoio-top{display:none!important}
+
+@media(max-width:620px){
+  .apoio-footer{margin-top:30px;padding:28px 14px 24px}
+  .apoio-footer-actions{margin-bottom:24px}
+  .apoio-print-button{width:min(100%,330px)}
+  .apoio-social-links{gap:9px;margin-bottom:26px}
+  .apoio-social-link{padding:8px 13px;font-size:.86rem}
+  .apoio-social-icon{width:27px;height:27px;flex-basis:27px}
+  .apoio-footer-logo img{width:132px}
+}
+
+@media print{
+  .apoio-footer{display:none!important}
+}
