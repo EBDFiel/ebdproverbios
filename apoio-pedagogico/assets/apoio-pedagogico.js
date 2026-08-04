@@ -78,7 +78,47 @@
     </div>`;
   document.body.append(footer);
 
+  const originalDocumentTitle = document.title;
+
+  const getLessonNumber = () => {
+    const sources = [
+      document.querySelector('h1')?.textContent,
+      document.querySelector('.licao-container h1')?.textContent,
+      document.querySelector('.titulo-licao')?.textContent,
+      document.title,
+      window.location.pathname
+    ].filter(Boolean);
+
+    for (const source of sources) {
+      const match = String(source).match(/li(?:ç|c)[aã]o[\s_-]*0?(\d{1,2})/i)
+        || String(source).match(/licao-(\d{1,2})(?:-|\.|\/|$)/i);
+      if (match) return String(Number(match[1]));
+    }
+
+    return '';
+  };
+
+  const getPrintDocumentTitle = () => {
+    const lessonNumber = getLessonNumber();
+    return lessonNumber
+      ? `Apoio Pedagógico Lição ${lessonNumber} Adultos`
+      : 'Apoio Pedagógico Adultos';
+  };
+
+  const preparePrintTitle = () => {
+    if (!isIndex) document.title = getPrintDocumentTitle();
+  };
+
+  const restoreDocumentTitle = () => {
+    document.title = originalDocumentTitle;
+  };
+
+  window.addEventListener('beforeprint', preparePrintTitle);
+  window.addEventListener('afterprint', restoreDocumentTitle);
+
   document.addEventListener('click', event => {
-    if (event.target.closest('[data-print]')) window.print();
+    if (!event.target.closest('[data-print]')) return;
+    preparePrintTitle();
+    window.print();
   });
 })();
