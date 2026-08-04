@@ -15,7 +15,7 @@
         <a class="apoio-button" href="../index.html" title="Página principal">${iconHome}<span class="button-label">Lições</span></a>
         ${isIndex ? '' : `<a class="apoio-button" href="index.html" title="Índice do apoio">${iconList}<span class="button-label">Índice</span></a>`}
         ${isIndex ? '' : `<button class="apoio-button" type="button" data-copy title="Copiar apoio pedagógico">${iconCopy}<span class="button-label">Copiar</span></button>`}
-        <button class="apoio-button primary" type="button" data-print title="Salvar ou imprimir">${iconPrint}<span class="button-label">Salvar / imprimir</span></button>
+        <button class="apoio-button primary" type="button" data-print title="Salvar ou imprimir com layout A4 otimizado">${iconPrint}<span class="button-label">Salvar / imprimir em A4</span></button>
       </nav>
     </div>`;
   document.body.prepend(toolbar);
